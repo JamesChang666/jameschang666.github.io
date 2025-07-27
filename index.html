@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>James Chang - CV</title>
+  <title data-i18n="page_title">James Chang - CV</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -176,8 +176,8 @@
       margin-bottom: 4px;
     }
     .proj-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      display: flex;
+      flex-direction: column;
       gap: 22px;
       margin: 0;
       padding: 0;
@@ -191,6 +191,7 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+      width: 100%;
     }
     .proj-title {
       font-weight: bold;
@@ -401,7 +402,7 @@
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-date" data-i18n="edu1_date">2025 – now</div>
+          <div class="timeline-date" data-i18n="edu1_date">2025<br>-<br>now</div>
           <div class="timeline-content">
             <div class="edu-title" data-i18n="edu1_school">Victoria University of Wellington</div>
             <div class="edu-meta" data-i18n="edu1_location">Wellington, New Zealand</div>
@@ -413,7 +414,7 @@
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-date" data-i18n="edu2_date">2020 – 2024</div>
+          <div class="timeline-date" data-i18n="edu2_date">2020<br>-<br>2024</div>
           <div class="timeline-content">
             <div class="edu-title" data-i18n="edu2_school">Tamkang University</div>
             <div class="edu-meta" data-i18n="edu2_location">Taipei, Taiwan</div>
@@ -430,7 +431,7 @@
       <div class="timeline">
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-date" data-i18n="exp2022_date">Jun 2022 - Sep 2022</div>
+          <div class="timeline-date" data-i18n="exp2022_date">Jun 2022<br>-<br>Sep 2022</div>
           <div class="timeline-content">
             <div class="exp-title" data-i18n="exp2022_title">Intern, R&D Unit I/Test Development Verification Division R&D Group (Zebra / Denso Mobile Project)</div>
             <div class="exp-meta" data-i18n="exp2022_company">ASKEY Computer Corporation, Taiwan</div>
@@ -446,7 +447,7 @@
         </div>
         <div class="timeline-item">
           <div class="timeline-dot"></div>
-          <div class="timeline-date" data-i18n="exp2023_date">Jun 2023 - Sep 2023</div>
+          <div class="timeline-date" data-i18n="exp2023_date">Jun 2023<br>-<br>Sep 2023</div>
           <div class="timeline-content">
             <div class="exp-title" data-i18n="exp2023_title">Intern, R&D Unit I/Test Development Verification Division R&D Group (AGV Project)</div>
             <div class="exp-meta" data-i18n="exp2023_company">ASKEY Computer Corporation, Taiwan</div>
@@ -624,6 +625,7 @@
     let currentLang = localStorage.getItem('lang') || 'en';
     const i18n = {
       en: {
+        page_title: 'James Chang - CV',
         nav_about: 'About',
         nav_education: 'Education',
         nav_experience: 'Experience',
@@ -641,18 +643,18 @@
         languages_title: 'LANGUAGES',
         certifications_title: 'CERTIFICATIONS',
         education_title: 'EDUCATION',
-        edu1_date: '2025 – now',
+        edu1_date: '2025<br>-<br>now',
         edu1_school: 'Victoria University of Wellington',
         edu1_location: 'Wellington, New Zealand',
         edu1_degree: 'Master of Engineering Practice (Mechatronic & Electrical Engineering)',
         edu1_desc1: 'PowerFactory-DIgSILENT, SolidWorks, Engineering Management, Git',
-        edu2_date: '2020 – 2024',
+        edu2_date: '2020<br>-<br>2024',
         edu2_school: 'Tamkang University',
         edu2_location: 'Taipei, Taiwan',
         edu2_degree: 'Bachelor of Mechanical and Electro-Mechanical Engineering (Opto-Mechatronics Group)',
         edu2_desc1: 'Python, C++, Matlab, Robotics, AutoCAD, Creo, PLC, CNC, Thermodynamics, Fluid Mechanics, Automatic Control, OPTO-Mechatronics',
         experience_title: 'PROFESSIONAL EXPERIENCE',
-        exp2022_date: 'Jun 2022 - Sep 2022',
+        exp2022_date: 'Jun 2022<br>-<br>Sep 2022',
         exp2022_title: 'Intern, R&D Unit I/Test Development Verification Division R&D Group (Zebra / Denso Mobile Project)',
         exp2022_company: 'ASKEY Computer Corporation, Taiwan',
         exp2022_desc1: '<strong>Designed detailed 3D mechanical models using PTC Creo, conducting dimensional validation and interference checks across assemblies.</strong>',
@@ -661,10 +663,10 @@
         exp2022_desc4: '<strong>Fabricated high-fidelity appearance and functional mockups via CNC machining and soft tooling for assembly and ergonomic testing.</strong>',
         exp2022_desc5: '<strong>Inspected prototypes for fit, finish, and surface quality, contributing to early-stage design for manufacturability (DFM) assessments.</strong>',
         exp2022_desc6: '<strong>Collaborated with industrial design, thermal, and manufacturing engineers to implement design refinements into EVT (Engineering Validation Test) prototypes.</strong>',
-        exp2023_date: 'Jun 2023 - Sep 2023',
+        exp2023_date: 'Jun 2023<br>-<br>Sep 2023',
         exp2023_title: 'Intern, R&D Unit I/Test Development Verification Division R&D Group (AGV Project)',
         exp2023_company: 'ASKEY Computer Corporation, Taiwan',
-        exp2023_group1: '1. Auto/Intelligent Manufacturing System Integration:',
+        exp2023_group1: '1. Auto/Intelligent Manufacturing System System Integration:',
         exp2023_g1_1: '<strong>Graphics: Integration of factory and warehouse space maps and shelf location information.</strong>',
         exp2023_g1_2: '<strong>Positioning: Integration of warehouse and factory fixation sensors.</strong>',
         exp2023_g1_3: '<strong>Optical Matrix: Ground-based optical marking of vehicle and coordinate identification points.</strong>',
@@ -743,6 +745,7 @@
         footer_location: 'Wellington, New Zealand'
       },
       zh: {
+        page_title: 'James Chang - 個人作品集',
         nav_about: '關於我',
         nav_education: '學歷',
         nav_experience: '經歷',
@@ -760,18 +763,18 @@
         languages_title: '語言',
         certifications_title: '證照',
         education_title: '學歷',
-        edu1_date: '2025 – 現在',
+        edu1_date: '2025<br>-<br>現在',
         edu1_school: '維多利亞大學（Wellington）',
         edu1_location: '紐西蘭威靈頓',
         edu1_degree: '工程實務碩士（機電與電機工程）',
         edu1_desc1: 'PowerFactory-DIgSILENT, SolidWorks, 工程管理, Git',
-        edu2_date: '2020 – 2024',
+        edu2_date: '2020<br>-<br>2024',
         edu2_school: '淡江大學',
         edu2_location: '台灣台北',
         edu2_degree: '機械與電機工程學士 (光機電群)',
         edu2_desc1: 'Python, C++, Matlab, 機器人, AutoCAD, Creo, PLC, CNC, 熱力學, 流體力學, 自動控制, 光機電',
         experience_title: '專業經歷',
-        exp2022_date: '2022年6月 - 2022年9月',
+        exp2022_date: '2022年6月<br>-<br>2022年9月',
         exp2022_title: '實習生, 研發部門 I/測試開發驗證部門研發組 (Zebra / Denso行動專案)',
         exp2022_company: 'ASKEY電腦股份有限公司, 台灣',
         exp2022_desc1: '<strong>使用 PTC Creo 設計精密 3D 機構模型，執行尺寸驗證與干涉分析。</strong>',
@@ -780,7 +783,7 @@
         exp2022_desc4: '<strong>使用 CNC 與軟模製程製作高擬真外觀與功能性原型，用於裝配與人體工學驗證。</strong>',
         exp2022_desc5: '<strong>檢驗原型的配合度、組裝品質與表面細節，支援可製造性設計審查（DFM）。</strong>',
         exp2022_desc6: '<strong>與工業設計、熱工與製造團隊協作，將優化設計導入 EVT 原型階段。</strong>',
-        exp2023_date: '2023年6月 - 2023年9月',
+        exp2023_date: '2023年6月<br>-<br>2023年9月',
         exp2023_title: '實習生, 研發部門 I/測試開發驗證部門研發組 (AGV專案)',
         exp2023_company: 'ASKEY電腦股份有限公司, 台灣',
         exp2023_group1: '一、自動化／智慧製造系統整合：',
@@ -867,6 +870,7 @@
         const key = el.getAttribute('data-i18n');
         if (i18n[lang][key]) el.innerHTML = i18n[lang][key];
       });
+      document.title = i18n[lang].page_title;
       langToggle.textContent = lang === 'en' ? '中文' : 'EN';
       langToggle.title = lang === 'en' ? '切換語言' : 'Switch language';
       localStorage.setItem('lang', lang);
