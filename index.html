@@ -289,96 +289,169 @@
       }
     }
     @media (max-width: 700px) {
-      .navbar, .hero, .container {
-        padding: 16px 4vw;
-      }
-      .hero {
-        flex-direction: column;
-        gap: 18px;
-        text-align: center;
-      }
-      .hero-img {
-        margin: 0 auto;
-      }
-      .timeline {
-        padding-left: 10px;
-        gap: 28px;
-        margin-left: 0;
-      }
-      .timeline-item {
-        flex-direction: column;
-        align-items: flex-start;
-        min-height: unset;
-      }
-      .timeline-dot {
-        width: 14px;
-        height: 14px;
-        left: -7px;
-        top: 4px;
-        margin-bottom: 2px;
-      }
-      .timeline-date {
-        min-width: unset;
-        max-width: unset;
-        margin: 0 0 6px 10px;
-        text-align: left;
-        font-size: 0.98rem;
-        display: block;
-        position: static;
-      }
-      .timeline-content {
-        padding: 12px 8px 10px 14px;
-        margin-left: 0;
-        width: 100%;
-      }
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
     }
-    footer {
-      background: var(--white);
-      color: #888;
+
+    .navbar-links {
+      flex-direction: column;
+      width: 100%;
+      gap: 12px;
+    }
+
+    .navbar-actions {
+      margin-left: 0;
+      align-self: flex-end;
+    }
+
+    .hero {
+      flex-direction: column;
+      gap: 18px;
       text-align: center;
-      padding: 18px 0 10px 0;
+      padding: 24px 6vw;
+    }
+
+    .hero-img {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+    }
+
+    .hero-name {
+      font-size: 1.8rem;
+    }
+
+    .hero-title {
       font-size: 1rem;
-      margin-top: 40px;
-      border-top: 1px solid var(--secondary);
     }
+
+    .hero-social {
+      justify-content: center;
+    }
+
+    .hero-contact {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .container {
+      padding: 24px 5vw;
+    }
+
+    .timeline {
+      padding-left: 0;
+      margin-left: 0;
+      border-left: none;
+      gap: 28px;
+    }
+
+    .timeline-item {
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: unset;
+    }
+
+    .timeline-dot {
+      display: none;
+    }
+
+    .timeline-date {
+      min-width: unset;
+      max-width: unset;
+      margin: 0 0 6px 0;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: bold;
+      display: block;
+    }
+
+    .timeline-content {
+      padding: 14px;
+      margin-left: 0;
+      width: 100%;
+    }
+
+    .proj-card {
+      padding: 16px;
+      gap: 6px;
+    }
+
+    .proj-title {
+      font-size: 1.1rem;
+    }
+
+    .proj-meta {
+      font-size: 0.96rem;
+    }
+
     .skills-categories {
+      gap: 24px 20px;
+    }
+
+    .skills-list li,
+    .lang-list li,
+    .cert-list li {
+      font-size: 0.95rem;
+      padding: 6px 10px;
+    }
+    /* 手機版漢堡選單按鈕樣式 */
+  .navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--primary);
+    cursor: pointer;
+  }
+
+  @media (max-width: 700px) {
+    .navbar-toggle {
+      display: block;
+    }
+    .navbar-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      gap: 12px;
+    }
+    .navbar-links.show {
       display: flex;
-      flex-wrap: wrap;
-      gap: 32px 36px;
-      margin-bottom: 8px;
+      animation: slideDown 0.25s ease-out;
     }
-    .skills-category {
-      min-width: 220px;
-      flex: 1 1 220px;
-      margin-bottom: 8px;
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    .skills-category-title {
-      font-weight: 600;
-      color: #1a4d8f;
-      margin-bottom: 8px;
-      font-size: 1.08rem;
-      letter-spacing: 0.5px;
-    }
+}
+
+}
+
+  
+
   </style>
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <div class="navbar-logo">James Chang</div>
-      <div class="navbar-links">
-        <a href="#about" data-i18n="nav_about">About</a>
-        <a href="#education" data-i18n="nav_education">Education</a>
-        <a href="#experience" data-i18n="nav_experience">Experience</a>
-        <a href="#projects" data-i18n="nav_projects">Projects</a>
-        <a href="#skills" data-i18n="nav_skills">Skills</a>
-        <a href="#certifications" data-i18n="nav_certifications">Certifications</a>
-        <span class="navbar-actions">
-          <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">🌙</button>
-          <button class="lang-toggle" id="langToggle" title="切換語言">中文</button>
-        </span>
-      </div>
-    </nav>
-  </header>
+  <nav class="navbar">
+    <div class="navbar-logo">James Chang</div>
+    <button class="navbar-toggle" id="navbarToggle" title="Menu">☰</button>
+    <div class="navbar-links" id="navbarLinks">
+      <a href="#about" data-i18n="nav_about">About</a>
+      <a href="#education" data-i18n="nav_education">Education</a>
+      <a href="#experience" data-i18n="nav_experience">Experience</a>
+      <a href="#projects" data-i18n="nav_projects">Projects</a>
+      <a href="#skills" data-i18n="nav_skills">Skills</a>
+      <a href="#certifications" data-i18n="nav_certifications">Certifications</a>
+      <span class="navbar-actions">
+        <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">🌙</button>
+        <button class="lang-toggle" id="langToggle" title="切換語言">中文</button>
+      </span>
+    </div>
+  </nav>
+</header>
+
   <section class="hero" id="about">
     <div class="hero-img">
       <img src="https://ui-avatars.com/api/?name=James+Chang&background=1a4d8f&color=fff&size=256" alt="James Chang">
@@ -605,6 +678,15 @@
     &copy; 2024 James Chang &mdash; <a href="mailto:james273899@gmail.com" style="color:#1a4d8f;text-decoration:none;" data-i18n="footer_contact">Contact Me</a> | <span data-i18n="footer_location">Wellington, New Zealand</span>
   </footer>
   <script>
+
+    // --- Mobile Navbar Toggle ---
+    const navbarToggle = document.getElementById('navbarToggle');
+    const navbarLinks = document.getElementById('navbarLinks');
+
+    navbarToggle.addEventListener('click', () => {
+      navbarLinks.classList.toggle('show');
+    });
+
     // --- Dark Mode ---
     const themeToggle = document.getElementById('themeToggle');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
